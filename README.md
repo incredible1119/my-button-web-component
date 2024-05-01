@@ -48,5 +48,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## References
 https://dev.to/josunlp/using-the-webcomponent-api-with-typescript-building-modular-and-readable-systems-32l1
+
 https://coryrylan.com/blog/how-to-use-web-components-with-typescript-and-react
+
 https://kinsta.com/blog/web-components/
