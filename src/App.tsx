@@ -19,7 +19,7 @@ function App() {
         variant="primary"
         size="large"
         onClick={handleClick}
-        rounded={16}
+        rounded="16px"
       >
         Primary
       </my-button>
@@ -36,7 +36,7 @@ function App() {
       <my-button
         variant="secondary"
         size="large"
-        rounded={16}
+        rounded="16px"
         onClick={handleClick}
       >
         Secondary
@@ -59,7 +59,7 @@ function App() {
       <my-button
         variant="success"
         size="large"
-        rounded={16}
+        rounded="16px"
         onClick={handleClick}
       >
         Success
@@ -77,7 +77,7 @@ function App() {
       <my-button
         variant="error"
         size="large"
-        rounded={16}
+        rounded="16px"
         onClick={handleClick}
       >
         Error

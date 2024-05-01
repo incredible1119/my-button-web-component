@@ -9,7 +9,7 @@ interface MyButtonProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
   border?: string;
-  rounded?: number;
+  rounded?: string;
   disabled?: boolean;
   children?: any;
 }
@@ -21,7 +21,7 @@ export class MyButton extends HTMLElement {
   variant: ButtonVariant;
   size: ButtonSize;
   border: string;
-  rounded: number;
+  rounded: string;
   disabled: boolean;
 
   constructor() {
@@ -30,7 +30,7 @@ export class MyButton extends HTMLElement {
     this.variant = "primary";
     this.size = "small";
     this.border = "none";
-    this.rounded = 4;
+    this.rounded = "4px";
     this.disabled = false;
   }
 
@@ -49,7 +49,7 @@ export class MyButton extends HTMLElement {
           display: inline-flex;
           align-items: center;
           border: ${this.border};
-          border-radius: ${this.rounded}px;
+          border-radius: ${this.rounded};
         }
 
         .my-button:not(.my-button--disabled):hover {
@@ -63,7 +63,7 @@ export class MyButton extends HTMLElement {
           left: 0;
           width: 100%; /* Cover the entire parent element */
           height: 100%;
-          border-radius: ${this.rounded}px;
+          border-radius: ${this.rounded};
           background-color: rgba(0, 0, 0, 0.15); /* set 15% black overlay */
         }
 
@@ -74,7 +74,7 @@ export class MyButton extends HTMLElement {
           left: 0;
           width: 100%; /* Cover the entire parent element */
           height: 100%;
-          border-radius: ${this.rounded}px;
+          border-radius: ${this.rounded};
           background-color: rgba(0, 0, 0, 0.25); /* set 25% black overlay */
         }
 
@@ -85,7 +85,7 @@ export class MyButton extends HTMLElement {
           left: 0;
           width: 100%; /* Cover the entire parent element */
           height: 100%;
-          border-radius: ${this.rounded}px;
+          border-radius: ${this.rounded};
           background-color: rgba(0, 0, 0, 0.25); /* set 25% black overlay */
         }
 
