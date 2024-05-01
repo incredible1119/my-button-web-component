@@ -64,7 +64,7 @@ export class MyButton extends HTMLElement {
           width: 100%; /* Cover the entire parent element */
           height: 100%;
           border-radius: ${this.rounded}px;
-          background-color: rgba(0, 0, 0, 0.15); /* Semi-transparent black color */
+          background-color: rgba(0, 0, 0, 0.15); /* set 15% black overlay */
         }
 
         .my-button:not(.my-button--disabled):active::after {
@@ -75,7 +75,7 @@ export class MyButton extends HTMLElement {
           width: 100%; /* Cover the entire parent element */
           height: 100%;
           border-radius: ${this.rounded}px;
-          background-color: rgba(0, 0, 0, 0.25); /* Semi-transparent black color */
+          background-color: rgba(0, 0, 0, 0.25); /* set 25% black overlay */
         }
 
         .my-button:not(.my-button--disabled):focus::after {
@@ -86,7 +86,7 @@ export class MyButton extends HTMLElement {
           width: 100%; /* Cover the entire parent element */
           height: 100%;
           border-radius: ${this.rounded}px;
-          background-color: rgba(0, 0, 0, 0.25); /* Semi-transparent black color */
+          background-color: rgba(0, 0, 0, 0.25); /* set 25% black overlay */
         }
 
         .my-button__primary {
