@@ -52,3 +52,5 @@ https://dev.to/josunlp/using-the-webcomponent-api-with-typescript-building-modul
 https://coryrylan.com/blog/how-to-use-web-components-with-typescript-and-react
 
 https://kinsta.com/blog/web-components/
+
+![Button components](image.png)
