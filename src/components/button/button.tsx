@@ -45,10 +45,48 @@ export class MyButton extends HTMLElement {
     shadow.innerHTML = `
       <style>
         .my-button {
+          position: relative;
           display: inline-flex;
           align-items: center;
           border: ${this.border};
           border-radius: ${this.rounded}px;
+        }
+
+        .my-button:not(.my-button--disabled):hover {
+          cursor: pointer;
+        }
+
+        .my-button:not(.my-button--disabled):hover::after {
+          content: ""; /* Create a pseudo-element to overlay */
+          position: absolute; /* Position the pseudo-element */
+          top: 0;
+          left: 0;
+          width: 100%; /* Cover the entire parent element */
+          height: 100%;
+          border-radius: ${this.rounded}px;
+          background-color: rgba(0, 0, 0, 0.15); /* Semi-transparent black color */
+        }
+
+        .my-button:not(.my-button--disabled):active::after {
+          content: ""; /* Create a pseudo-element to overlay */
+          position: absolute; /* Position the pseudo-element */
+          top: 0;
+          left: 0;
+          width: 100%; /* Cover the entire parent element */
+          height: 100%;
+          border-radius: ${this.rounded}px;
+          background-color: rgba(0, 0, 0, 0.25); /* Semi-transparent black color */
+        }
+
+        .my-button:not(.my-button--disabled):focus::after {
+          content: ""; /* Create a pseudo-element to overlay */
+          position: absolute; /* Position the pseudo-element */
+          top: 0;
+          left: 0;
+          width: 100%; /* Cover the entire parent element */
+          height: 100%;
+          border-radius: ${this.rounded}px;
+          background-color: rgba(0, 0, 0, 0.25); /* Semi-transparent black color */
         }
 
         .my-button__primary {
@@ -91,9 +129,10 @@ export class MyButton extends HTMLElement {
 
         .my-button--disabled {
           cursor: not-allowed;
+          opacity: 0.3;
         }
       </style>
-      <div class="${className}">
+      <div tabindex="0" class="${className}">
         <slot>Thank you</slot>
       </div>
     `;

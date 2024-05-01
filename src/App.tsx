@@ -20,8 +20,10 @@ function App() {
         size="large"
         onClick={handleClick}
         rounded={16}
-        disabled
       >
+        Primary
+      </my-button>
+      <my-button variant="primary" size="large" onClick={handleClick} disabled>
         Primary
       </my-button>
       {/* Secondary buttons */}
@@ -31,7 +33,20 @@ function App() {
       <my-button variant="secondary" size="medium" onClick={handleClick}>
         Secondary
       </my-button>
-      <my-button variant="secondary" size="large" onClick={handleClick}>
+      <my-button
+        variant="secondary"
+        size="large"
+        rounded={16}
+        onClick={handleClick}
+      >
+        Secondary
+      </my-button>
+      <my-button
+        variant="secondary"
+        size="large"
+        disabled
+        onClick={handleClick}
+      >
         Secondary
       </my-button>
       {/* Success buttons */}
@@ -41,7 +56,15 @@ function App() {
       <my-button variant="success" size="medium" onClick={handleClick}>
         Success
       </my-button>
-      <my-button variant="success" size="large" onClick={handleClick}>
+      <my-button
+        variant="success"
+        size="large"
+        rounded={16}
+        onClick={handleClick}
+      >
+        Success
+      </my-button>
+      <my-button variant="success" size="large" disabled onClick={handleClick}>
         Success
       </my-button>
       {/* Error buttons */}
@@ -51,7 +74,15 @@ function App() {
       <my-button variant="error" size="medium" onClick={handleClick}>
         Error
       </my-button>
-      <my-button variant="error" size="large" onClick={handleClick}>
+      <my-button
+        variant="error"
+        size="large"
+        rounded={16}
+        onClick={handleClick}
+      >
+        Error
+      </my-button>
+      <my-button variant="error" size="large" disabled onClick={handleClick}>
         Error
       </my-button>
     </div>
