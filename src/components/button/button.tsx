@@ -34,6 +34,13 @@ export class MyButton extends HTMLElement {
     this.disabled = false;
   }
 
+  clickListener(event: MouseEvent) {
+    if (this.disabled) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  }
+
   // Invoked when the custom element is first connected to the document's DOM.
   connectedCallback() {
     // the Shadow DOM can only be accessed within the Web Component.
@@ -136,10 +143,14 @@ export class MyButton extends HTMLElement {
         <slot>Thank you</slot>
       </div>
     `;
+
+    this.addEventListener("click", this.clickListener);
   }
 
   // Invoked when the custom element is disconnected from the document's DOM.
-  disconnectedCallback() {}
+  disconnectedCallback() {
+    this.removeEventListener("click", this.clickListener);
+  }
 
   // component attributes
   static get observedAttributes() {
