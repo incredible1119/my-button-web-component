@@ -63,35 +63,26 @@ export class MyButton extends HTMLElement {
           cursor: pointer;
         }
 
-        .my-button:not(.my-button--disabled):hover::after {
+        .my-button:not(.my-button--disabled)::after {
           content: ""; /* Create a pseudo-element to overlay */
           position: absolute; /* Position the pseudo-element */
           top: 0;
           left: 0;
           width: 100%; /* Cover the entire parent element */
           height: 100%;
+        }
+
+        .my-button:not(.my-button--disabled):hover::after {
           border-radius: ${this.rounded};
           background-color: rgba(0, 0, 0, 0.15); /* set 15% black overlay */
         }
 
         .my-button:not(.my-button--disabled):active::after {
-          content: ""; /* Create a pseudo-element to overlay */
-          position: absolute; /* Position the pseudo-element */
-          top: 0;
-          left: 0;
-          width: 100%; /* Cover the entire parent element */
-          height: 100%;
           border-radius: ${this.rounded};
           background-color: rgba(0, 0, 0, 0.25); /* set 25% black overlay */
         }
 
         .my-button:not(.my-button--disabled):focus::after {
-          content: ""; /* Create a pseudo-element to overlay */
-          position: absolute; /* Position the pseudo-element */
-          top: 0;
-          left: 0;
-          width: 100%; /* Cover the entire parent element */
-          height: 100%;
           border-radius: ${this.rounded};
           background-color: rgba(0, 0, 0, 0.25); /* set 25% black overlay */
         }

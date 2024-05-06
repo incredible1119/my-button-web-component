@@ -1,5 +1,6 @@
 import "./App.css";
 import "./components/button/button";
+import { NewButtonComponent } from "./components/button/newbutton";
 
 function App() {
   const handleClick = () => {
@@ -8,6 +9,7 @@ function App() {
 
   return (
     <div className="App">
+      <NewButtonComponent myValue={0}>Hi</NewButtonComponent>
       {/* Primary buttons */}
       <my-button variant="primary" onClick={handleClick}>
         Primary
