@@ -1,27 +1,23 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
+import { styleMap } from "lit/directives/style-map.js";
 
-// Type definition.
-// type ButtonVariant = "primary" | "secondary" | "success" | "error";
-
-// type ButtonSize = "small" | "medium" | "large";
-
-enum ButtonVariant {
+export enum ButtonVariant {
   PRIMARY = "primary",
   SECONDARY = "secondary",
   SUCCESS = "success",
   ERROR = "error",
 }
 
-enum ButtonSize {
+export enum ButtonSize {
   SMALL = "small",
   MEDIUM = "medium",
   LARGE = "large",
 }
 
 @customElement("new-button")
-export class NewButton extends LitElement {
+export class Button extends LitElement {
   static tagName = "new-button";
 
   static styles = css`
@@ -100,32 +96,29 @@ export class NewButton extends LitElement {
     }
   `;
 
-  @property({ type: Number })
-  accessor myValue = 0;
-  // @property({ type: Boolean }) disabled;
+  @property({ type: Boolean })
+  accessor disabled = false;
 
-  // @property({ type: ButtonVariant }) variant;
-  // @property({ type: ButtonSize }) size;
+  @property({ type: ButtonVariant })
+  accessor variant = ButtonVariant.PRIMARY;
 
-  // constructor() {
-  //   super();
+  @property({ type: ButtonSize })
+  accessor size = ButtonSize.SMALL;
 
-  //   this.myValue = 0;
-  //   // this.size = ButtonSize.SMALL;
-  //   // this.variant = ButtonVariant.PRIMARY;
-  // }
+  @property()
+  accessor rounded = "4px";
 
   render() {
-    console.log("**** rendering ");
     return html`
       <div
         tabindex="0"
         class=${classMap({
           "my-button": true,
-          // [`my-button__${this.variant}`]: this.variant,
-          // [`my-button__${this.size}`]: this.size,
-          // "my-button--disabled": this.disabled,
+          [`my-button__${this.variant}`]: this.variant,
+          [`my-button__${this.size}`]: this.size,
+          "my-button--disabled": this.disabled,
         })}
+        style=${styleMap({ borderRadius: this.rounded })}
       >
         <slot>Thank you</slot>
       </div>
@@ -135,6 +128,6 @@ export class NewButton extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "new-button": NewButton;
+    "new-button": Button;
   }
 }
