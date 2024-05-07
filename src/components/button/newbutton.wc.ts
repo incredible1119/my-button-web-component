@@ -99,20 +99,21 @@ export class NewButton extends LitElement {
       opacity: 0.3;
     }
   `;
+
   @property({ type: Number })
-  myValue;
+  accessor myValue = 0;
   // @property({ type: Boolean }) disabled;
 
   // @property({ type: ButtonVariant }) variant;
   // @property({ type: ButtonSize }) size;
 
-  constructor() {
-    super();
+  // constructor() {
+  //   super();
 
-    this.myValue = 0;
-    // this.size = ButtonSize.SMALL;
-    // this.variant = ButtonVariant.PRIMARY;
-  }
+  //   this.myValue = 0;
+  //   // this.size = ButtonSize.SMALL;
+  //   // this.variant = ButtonVariant.PRIMARY;
+  // }
 
   render() {
     console.log("**** rendering ");
