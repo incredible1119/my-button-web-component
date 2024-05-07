@@ -3,18 +3,20 @@ import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { styleMap } from "lit/directives/style-map.js";
 
-export enum ButtonVariant {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
-  SUCCESS = "success",
-  ERROR = "error",
-}
+export const ButtonVariants = {
+  primary: "primary",
+  secondary: "secondary",
+  success: "success",
+  error: "error",
+};
+export type ButtonVariant = keyof typeof ButtonVariants;
 
-export enum ButtonSize {
-  SMALL = "small",
-  MEDIUM = "medium",
-  LARGE = "large",
-}
+export const ButtonSizes = {
+  small: "small",
+  medium: "medium",
+  large: "large",
+};
+export type ButtonSize = keyof typeof ButtonSizes;
 
 @customElement("new-button")
 export class Button extends LitElement {
@@ -25,6 +27,7 @@ export class Button extends LitElement {
       position: relative;
       display: inline-flex;
       align-items: center;
+      overflow: hidden;
     }
 
     .my-button:not(.my-button--disabled):hover {
@@ -99,14 +102,33 @@ export class Button extends LitElement {
   @property({ type: Boolean })
   accessor disabled = false;
 
-  @property({ type: ButtonVariant })
-  accessor variant = ButtonVariant.PRIMARY;
+  @property()
+  accessor variant: ButtonVariant = "primary";
 
-  @property({ type: ButtonSize })
-  accessor size = ButtonSize.SMALL;
+  @property()
+  accessor size: ButtonSize = "small";
 
   @property()
   accessor rounded = "4px";
+
+  clickListener(event: MouseEvent) {
+    if (this.disabled) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+
+    this.addEventListener("click", this.clickListener);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+
+    this.removeEventListener("click", this.clickListener);
+  }
 
   render() {
     return html`

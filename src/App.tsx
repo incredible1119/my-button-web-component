@@ -1,7 +1,5 @@
 import "./App.css";
-import "./components/button/button";
 import { ButtonComponent } from "./components/button/button";
-import { ButtonVariant, ButtonSize } from "./components/button/button.wc";
 
 function App() {
   const handleClick = () => {
@@ -11,108 +9,92 @@ function App() {
   return (
     <div className="App">
       {/* Primary buttons */}
-      <ButtonComponent variant={ButtonVariant.PRIMARY} onClick={handleClick}>
+      <ButtonComponent variant="primary" onClick={handleClick}>
+        Primary
+      </ButtonComponent>
+      <ButtonComponent variant="primary" size="medium" onClick={handleClick}>
         Primary
       </ButtonComponent>
       <ButtonComponent
-        variant={ButtonVariant.PRIMARY}
-        size={ButtonSize.MEDIUM}
-        onClick={handleClick}
-      >
-        Primary
-      </ButtonComponent>
-      <ButtonComponent
-        variant={ButtonVariant.PRIMARY}
-        size={ButtonSize.LARGE}
+        variant="primary"
+        size="large"
         onClick={handleClick}
         rounded="16px"
       >
         Primary
       </ButtonComponent>
       <ButtonComponent
-        variant={ButtonVariant.PRIMARY}
-        size={ButtonSize.LARGE}
+        variant="primary"
+        size="large"
         onClick={handleClick}
         disabled
       >
         Primary
       </ButtonComponent>
       {/* Secondary buttons */}
-      <ButtonComponent variant={ButtonVariant.SECONDARY} onClick={handleClick}>
+      <ButtonComponent variant="secondary" onClick={handleClick}>
+        Secondary
+      </ButtonComponent>
+      <ButtonComponent variant="secondary" size="medium" onClick={handleClick}>
         Secondary
       </ButtonComponent>
       <ButtonComponent
-        variant={ButtonVariant.SECONDARY}
-        size={ButtonSize.MEDIUM}
-        onClick={handleClick}
-      >
-        Secondary
-      </ButtonComponent>
-      <ButtonComponent
-        variant={ButtonVariant.SECONDARY}
-        size={ButtonSize.LARGE}
+        variant="secondary"
+        size="large"
         rounded="16px"
         onClick={handleClick}
       >
         Secondary
       </ButtonComponent>
       <ButtonComponent
-        variant={ButtonVariant.SECONDARY}
-        size={ButtonSize.LARGE}
+        variant="secondary"
+        size="large"
         disabled
         onClick={handleClick}
       >
         Secondary
       </ButtonComponent>
       {/* Success buttons */}
-      <ButtonComponent variant={ButtonVariant.SUCCESS} onClick={handleClick}>
+      <ButtonComponent variant="success" onClick={handleClick}>
+        Success
+      </ButtonComponent>
+      <ButtonComponent variant="success" size="medium" onClick={handleClick}>
         Success
       </ButtonComponent>
       <ButtonComponent
-        variant={ButtonVariant.SUCCESS}
-        size={ButtonSize.MEDIUM}
-        onClick={handleClick}
-      >
-        Success
-      </ButtonComponent>
-      <ButtonComponent
-        variant={ButtonVariant.SUCCESS}
-        size={ButtonSize.LARGE}
+        variant="success"
+        size="large"
         rounded="16px"
         onClick={handleClick}
       >
         Success
       </ButtonComponent>
       <ButtonComponent
-        variant={ButtonVariant.SUCCESS}
-        size={ButtonSize.LARGE}
+        variant="success"
+        size="large"
         disabled
         onClick={handleClick}
       >
         Success
       </ButtonComponent>
       {/* Error buttons */}
-      <ButtonComponent variant={ButtonVariant.ERROR} onClick={handleClick}>
+      <ButtonComponent variant="error" onClick={handleClick}>
+        Error
+      </ButtonComponent>
+      <ButtonComponent variant="error" size="medium" onClick={handleClick}>
         Error
       </ButtonComponent>
       <ButtonComponent
-        variant={ButtonVariant.ERROR}
-        size={ButtonSize.MEDIUM}
-        onClick={handleClick}
-      >
-        Error
-      </ButtonComponent>
-      <ButtonComponent
-        variant={ButtonVariant.ERROR}
-        size={ButtonSize.LARGE}
+        variant="error"
+        size="large"
         rounded="16px"
         onClick={handleClick}
       >
         Error
       </ButtonComponent>
       <ButtonComponent
-        variant={ButtonVariant.ERROR}
-        size={ButtonSize.LARGE}
+        variant="error"
+        size="large"
         disabled
         onClick={handleClick}
       >
